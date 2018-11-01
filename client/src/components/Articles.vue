@@ -1,3 +1,90 @@
+<template>
+  <div class="container-fluid">
+
+
+    <div class="row">
+      <div class="col-sm-4 polaroid">
+        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/watches.jpg" class="categoryImg"></router-link>
+        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Home</span></h3>
+      </div>
+
+      <div class="col-sm-4 polaroid">
+        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/glasses.jpg" class="categoryImg"></router-link>
+        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Sprits</span></h3>
+      </div>
+
+      <div class="col-sm-4 polaroid">
+        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/hat.jpg" class="categoryImg"></router-link>
+        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Accesories</span></h3>
+      </div>
+    </div>
+  </div>
+
+
+</template>
+<script>
+export default {
+}
+</script>
+<style scoped>
+.categoryImg{
+  object-fit: cover;
+  width:90%;
+  height:125%;
+  margin-top: 4vh;
+  opacity: 0.7;
+  margin-top: 8vh;
+  display: block;
+  /* border-radius: 25px; */
+  content: attr(title);
+}
+
+.categoryImg:hover{
+  opacity: 1.0;
+}
+h3 {
+  position: absolute;
+  top: 99%;
+  width: 90%;
+  left:7.5%;
+  line-height: 1.67;
+}
+h3 span {
+  color: white;
+  letter-spacing: -1px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+}
+h3 span.spacer {
+  padding:5px;
+  background: rgba(0, 0, 0,0);
+}
+.container-fluid{
+  width: 90%;
+}
+
+.polaroid {
+  position: relative;
+}
+
+.polaroid img {
+  border: 15px solid #fff;
+  border-bottom: 75px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+  -moz-box-shadow: 3px 3px 3px #777;
+  box-shadow: 3px 3px 3px 2px #777;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
+</style>
+
 <!-- <template>
 <div>
 <Cards :articles="articles" />
@@ -57,90 +144,3 @@ this.prevUrl = response.data.prevUrl;
 <style scoped>
 
 </style> -->
-<template>
-  <div class="container-fluid">
-
-
-    <div class="row">
-      <div class="col-sm-4 polaroid">
-        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/watches.jpg" class="categoryImg"></router-link>
-        <h2><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Home</span></h2>
-      </div>
-
-      <div class="col-sm-4 polaroid">
-        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/glasses.jpg" class="categoryImg"></router-link>
-        <h2><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Sprits</span></h2>
-      </div>
-
-      <div class="col-sm-4 polaroid">
-        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/hat.jpg" class="categoryImg"></router-link>
-        <h2><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Accesories</span></h2>
-      </div>
-    </div>
-  </div>
-
-
-</template>
-<script>
-export default {
-}
-</script>
-<style scoped>
-.categoryImg{
-  object-fit: cover;
-  width:90%;
-  height:125%;
-  margin-top: 4vh;
-  opacity: 0.7;
-  margin-top: 8vh;
-  display: block;
-  /* border-radius: 25px; */
-  content: attr(title);
-}
-
-.categoryImg:hover{
-  opacity: 1.0;
-}
-h2 {
-  position: absolute;
-  top: 99%;
-  width: 90%;
-  left:7.5%;
-
-}
-h2 span {
-  color: white;
-  font: bold 24px/45px Helvetica, Sans-Serif;
-  letter-spacing: -1px;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 5px;
-}
-h2 span.spacer {
-  padding:0 8px;
-  background: rgba(0, 0, 0,0);
-}
-.container-fluid{
-  width: 90%;
-}
-
-.polaroid {
-  position: relative;
-}
-
-.polaroid img {
-  border: 15px solid #fff;
-  border-bottom: 65px solid #fff;
-  -webkit-box-shadow: 3px 3px 3px #777;
-     -moz-box-shadow: 3px 3px 3px #777;
-          box-shadow: 3px 3px 3px #777;
-}
-
-.polaroid p {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 0px;
-  font: 400 18px/1 'Kaushan Script', cursive;
-  color: #888;
-}
-</style>
