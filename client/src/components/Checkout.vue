@@ -1,20 +1,21 @@
 <template>
   <div class="container">
-    <div class="row">
+    <div class="row cart">
       <div class="col-md-12">
-
-
-
         <div v-if="cart.length==0">
-          <div class="flex d-flex flex-row justify-content-around">
-            <div class="polaroid ">
-              <img src="../assets/emptycart.jpg" alt="emptycart" class="cartimg">
-              <p class="text-center">Empty carts are for things,<br> not people.</p>
+
+          <div class="flex d-flex justify-content-center">
+            <div class="polaroidCART ">
+              <img src="../assets/emptycart.jpg" alt="emptycart" class="emptycartimg">
+              <p class="text-center">Empty carts are for things,<br> not people you silly person.</p>
             </div>
-
+            <div class="emptyCartText">
+              <h2>oooops!</h2>
+              <h3>Your cart is empty, put something in it!</h3>
+            </div>
           </div>
-        </div>
 
+        </div>
 
         <div v-else>
           <table class="table stripped ">
@@ -24,7 +25,9 @@
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">SubTotat</th>
+                <th scope="col">Length</th>
                 <th scope="col">Actions</th>
+
               </tr>
             </thead>
             <tbody>
@@ -33,6 +36,8 @@
                 <td>${{ item.price }}</td>
                 <td>{{ item.qty }}</td>
                 <td>${{ item.subtotal }}</td>
+                <td>${{ item.length }}</td>
+
                 <td>
                   <button class="btn btn-sm btn-info mr-1" @click="action('min',item)">-</button>
                   <button class="btn btn-sm btn-danger mr-1" @click="action('clear',item)">Clear</button>
@@ -48,6 +53,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 import Api from '@/config/Api'
@@ -89,7 +95,7 @@ export default {
     checkout(){
       this.handler.open({
         name: 'Shopping Cart',
-        description: 'Web site for Shopping Cart',
+        description: 'Website for Shopping Cart',
         amount: this.total*100
       });
     },
@@ -102,6 +108,7 @@ export default {
         this.$store.commit('setPrice', item);
         localStorage.setItem('cart', JSON.stringify(this.cart));
         break;
+
         case 'min':
         item.qty--;
         item.subtotal = item.price*item.qty;
@@ -110,6 +117,7 @@ export default {
         localStorage.setItem('cart', JSON.stringify(this.cart));
         if(item.qty === 0) this.clearFromCart(item)
         break;
+
         case 'clear':
         this.clearFromCart(item)
         break;
@@ -131,29 +139,35 @@ export default {
 
 <style>
 
-.polaroid {
+.polaroidCART {
   position: relative;
-  width: 50vh;
+  width: 50%;
 }
-
-.polaroid img {
+.polaroidCART img {
   border: 10px solid #fff;
   border-bottom: 85px solid #fff;
   -webkit-box-shadow: 3px 3px 3px #777;
   -moz-box-shadow: 3px 3px 3px #777;
   box-shadow: 3px 3px 3px 2px #777;
-
 }
 
-.polaroid p {
+.polaroidCART p {
   position: absolute;
   text-align: center;
   width: 100%;
   bottom: 0px;
-
 }
 .flex{
   padding: 5vh;
 }
+.emptyCartText{
+  width: 50%;
+  padding: 10vh;
+}
+.cart{
 
+}
+p {
+  font-size: 23px;
+}
 </style>

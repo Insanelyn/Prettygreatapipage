@@ -1,41 +1,41 @@
-<template>
+.<template>
   <div class="container-fluid">
-
-
     <div class="row">
-      <div class="col-sm-4 polaroid">
-        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/watches.jpg" class="categoryImg"></router-link>
-        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Home</span></h3>
-      </div>
-
-      <div class="col-sm-4 polaroid">
-        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/glasses.jpg" class="categoryImg"></router-link>
-        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Sprits</span></h3>
-      </div>
-
-      <div class="col-sm-4 polaroid">
-        <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/hat.jpg" class="categoryImg"></router-link>
-        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>Accesories</span></h3>
+      <div class="col-sm-4 polaroid"  v-for="category in categories" :key="category._id">
+        <router-link tag="a" :to = "{name: 'category', params: {category: category.title}}"><img :src="category.image" class="categoryImg"></router-link>
+        <h3><span>The Quintessential<span class='spacer'></span><br /><span class='spacer'></span>{{category.title}}</span></h3>
       </div>
     </div>
   </div>
-
-
 </template>
+
 <script>
+import Api from '@/config/Api'
 export default {
+    data() {
+        return {
+            categories: [],
+        }
+    },
+    created() {
+        Api().get('/categories')
+            .then(response => {
+                this.categories = response.data;
+            });
+    },
 }
 </script>
+
 <style scoped>
 .categoryImg{
   object-fit: cover;
-  width:90%;
-  height:125%;
+  width:80%;
   margin-top: 4vh;
   opacity: 0.7;
   margin-top: 8vh;
   display: block;
-  /* border-radius: 25px; */
+  border-radius: 0px;
+  height: 80%;
   content: attr(title);
 }
 
@@ -43,11 +43,13 @@ export default {
   opacity: 1.0;
 }
 h3 {
-  position: absolute;
-  top: 99%;
+  position: relative;
   width: 90%;
-  left:7.5%;
+  left:12%;
+  top:-30%;
   line-height: 1.67;
+  font-family: 'Six Caps', sans-serif;
+
 }
 h3 span {
   color: white;
@@ -56,7 +58,6 @@ h3 span {
   padding: 5px;
 }
 h3 span.spacer {
-  padding:5px;
   background: rgba(0, 0, 0,0);
 }
 .container-fluid{
@@ -72,17 +73,9 @@ h3 span.spacer {
   border-bottom: 75px solid #fff;
   -webkit-box-shadow: 3px 3px 3px #777;
   -moz-box-shadow: 3px 3px 3px #777;
-  box-shadow: 3px 3px 3px 2px #777;
+  box-shadow: 3px 3px 3px 1px #777;
 }
 
-.polaroid p {
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  bottom: 0px;
-  font: 400 18px/1 'Kaushan Script', cursive;
-  color: #888;
-}
 </style>
 
 <!-- <template>

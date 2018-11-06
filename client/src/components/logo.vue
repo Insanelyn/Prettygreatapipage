@@ -1,6 +1,5 @@
-<template>
-  <router-link tag="a" :to = "{name: 'home'}" class="navbar-brand mx-auto">  <img src="../assets/logo.png" class="logoIMG">
-</router-link>
+<template lang="html">
+  <router-link tag="a" :to = "{name: 'home'}"><img src="../assets/old.png" class="img-responsive center-block"></router-link>
 
 </template>
 
@@ -9,7 +8,5 @@ export default {
 }
 </script>
 
-
-
-<style>
+<style lang="css">
 </style>

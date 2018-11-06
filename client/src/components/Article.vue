@@ -6,9 +6,10 @@
 </div>
 
         <div class="col-md-6 article">
-        <h5>{{ article.product_name }}</h5>
-        <p><span class="font-weight-bold">Category</span>: {{ article.category }}</p>
-        <p><span class="font-weight-bold">Color</span>: {{ article.color }}</p>
+        <h2>The {{ article.product_name }}</h2>
+
+        <!-- <p><span class="font-weight-bold">Category</span>: {{ article.category }}</p> -->
+        <!-- <p><span class="font-weight-bold">Color</span>: {{ article.color }}</p> -->
 
         <p class="text-danger font-weight-bold">${{article.price}}</p>
         <p>
@@ -55,5 +56,7 @@ img{
 }
 .article{
   top:9vh;
+  font-family: 'Six Caps', sans-serif;
+
 }
 </style>

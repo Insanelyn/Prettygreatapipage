@@ -1,6 +1,6 @@
 export default {
     methods: {
-        addToCart(article) {
+          addToCart(article) {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             if (cart.length === 0) {
                 let item = {
