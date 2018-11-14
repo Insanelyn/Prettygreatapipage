@@ -1,42 +1,40 @@
 <template>
   <body>
-            <footer id="myFooter">
+            <footer id="siteFooter">
             <div class="container">
+
                 <div class="row">
-                    <div class="col-sm-3">
+                    <!-- <div class="col-sm-3">
                         <img src="../assets/bluelogo.png" class="navbar-brand">
-                    </div>
-                    <div class="col-sm-2">
-                        <h5>Get started</h5>
+                    </div> -->
+                    <div class="col-sm-3">
+                        <h5>Navigation</h5>
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Sign up</a></li>
-                            <li><a href="#">Downloads</a></li>
-                        </ul>
+                          </ul>
                     </div>
-                    <div class="col-sm-2">
-                        <h5>About us</h5>
+                    <div class="col-sm-3">
+                        <h5>Store</h5>
                         <ul>
-                            <li><a href="#">Company Information</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-sm-3">
                         <h5>Support</h5>
                         <ul>
                             <li><a href="#">FAQ</a></li>
                             <li><a href="#">Help desk</a></li>
-                            <li><a href="#">Forums</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-3">
                         <div class="social-networks">
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://www.twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook-square"></i></a>
+                            <a href="https://www.google-plus.com/" class="google"><i class="fa fa-google-plus"></i></a>
                         </div>
-                        <button type="button" class="btn btn-default">Contact us</button>
+                        <button type="button" class="btn btn-secondary">Contact us</button>
                     </div>
                 </div>
             </div>
@@ -46,121 +44,118 @@
 </template>
 
 <script>
+import Api from '@/config/Api'
 export default {
+  data() {
+    return {
+      categories: []
+    }
+  },
+  created() {
+    Api().get('/categories')
+    .then(response => {
+      this.categories = response.data;
+    });
+
+  }
 }
 </script>
 
 <style lang="css">
-#myFooter {
+#siteFooter {
     color: white;
     padding-top: 7%;
 }
 
 
-#myFooter .row {
+#siteFooter .row {
     margin-bottom: 30px;
 }
 
-#myFooter .navbar-brand {
-    margin: 15%;
+#siteFooter .navbar-brand {
+    margin: 11%;
     width: 75%;
 
 }
 
 
-#myFooter ul {
+#siteFooter ul {
     list-style-type: none;
     padding-left: 0;
     line-height: 1.7;
 }
 
-#myFooter h5 {
+#siteFooter h5 {
     font-size: 18px;
     color: #8E8D8A;
     font-weight: bold;
     margin-top: 30px;
 }
 
-#myFooter h2 a{
+#siteFooter h2 a{
     font-size: 50px;
     text-align: center;
     color: #fff;
 }
 
-#myFooter a {
-    color: #d2d1d1;
+#siteFooter a {
+    color: #d4d4d4;
     text-decoration: none;
 }
 
-#myFooter a:hover,
-#myFooter a:focus {
+#siteFooter a:hover,
+#siteFooter a:focus {
     text-decoration: none;
     color: white;
 }
 
-#myFooter .social-networks {
+#siteFooter .social-networks {
     text-align: center;
     padding-top: 30px;
     padding-bottom: 16px;
 }
 
-#myFooter .social-networks a {
+#siteFooter .social-networks a {
     font-size: 32px;
-    color: #f9f9f9;
+    color: gray;
     padding: 10px;
     transition: 0.2s;
 }
 
-#myFooter .social-networks a:hover {
+#siteFooter .social-networks a:hover {
     text-decoration: none;
 }
 
-#myFooter .facebook:hover {
+#siteFooter .facebook:hover {
     color: #0077e2;
 }
 
-#myFooter .google:hover {
+#siteFooter .google:hover {
     color: #ef1a1a;
 }
 
-#myFooter .twitter:hover {
+#siteFooter .twitter:hover {
     color: #00aced;
 }
 
-#myFooter .btn {
+#siteFooter .btn {
     color: white;
-    background-color: #d84b6b;
-    border-radius: 20px;
+    border-radius: 50px;
     border: none;
     width: 150px;
     display: block;
     margin: 0 auto;
-    margin-top: 10px;
     line-height: 25px;
+
 }
 
 @media screen and (max-width: 767px) {
-    #myFooter {
+    #siteFooter {
         text-align: center;
     }
 }
 
 
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
-
-
-body{
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    height: 100%;
-}
-
-.btn-default{
-  background-color:#FCE181!important;
-}
 
 
 </style>

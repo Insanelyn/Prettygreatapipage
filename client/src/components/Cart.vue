@@ -25,12 +25,14 @@ export default {
       return total;
   }
 }
+
+
 }
 </script>
 
 <style lang="css">
 .cartimg{
   width:9vh;
-  margin: 0 auto;
+
 }
 </style>

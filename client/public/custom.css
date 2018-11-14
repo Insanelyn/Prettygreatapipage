@@ -1,7 +1,17 @@
 
 
 body {
-  background-color:#fbf7f5	;
   font-family: 'Quicksand', sans-serif;
-
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      -webkit-flex-direction: column;
+      height: 100%;
+      color: 828081;
+}
+a {
+  color:#008F95;
+}
+.btn-primary {
+  background-color: #E24E42!important;
 }

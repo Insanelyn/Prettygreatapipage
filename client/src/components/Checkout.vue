@@ -3,15 +3,14 @@
     <div class="row cart">
       <div class="col-md-12">
         <div v-if="cart.length==0">
-
           <div class="flex d-flex justify-content-center">
             <div class="polaroidCART ">
               <img src="../assets/emptycart.jpg" alt="emptycart" class="emptycartimg">
-              <p class="text-center">Empty carts are for things,<br> not people you silly person.</p>
+              <p class="text-center">Empty carts are for things,<br> not people you Hipster.</p>
             </div>
             <div class="emptyCartText">
-              <h2>oooops!</h2>
-              <h3>Your cart is empty, put something in it!</h3>
+              <h1>oooops!</h1>
+              <h2>Your cart is empty, put something in it!</h2>
             </div>
           </div>
 
@@ -39,16 +38,20 @@
                 <td>${{ item.length }}</td>
 
                 <td>
-                  <button class="btn btn-sm btn-info mr-1" @click="action('min',item)">-</button>
-                  <button class="btn btn-sm btn-danger mr-1" @click="action('clear',item)">Clear</button>
-                  <button class="btn btn-sm btn-info mr-1" @click="action('add',item)">+</button>
+                  <button class="btn btn-sm addreduce mr-1" @click="action('min',item)">-</button>
+                  <button class="btn btn-sm btn-primary mr-1" @click="action('clear',item)">Remove</button>
+                  <button class="btn btn-sm addreduce mr-1" @click="action('add',item)">+</button>
                 </td>
               </tr>
             </tbody>
           </table>
+          <div class="pull-right">
+
           <h4>Total: ${{ total }}</h4>
-          <button id="checkout" class="btn btn-outline-primary" @click="checkout">Checkout</button>
+          <button id="checkout" class="btn btn-outline-success" @click="checkout">Checkout</button>
         </div>
+      </div>
+
       </div>
     </div>
   </div>
@@ -137,11 +140,11 @@ export default {
 }
 </script>
 
-<style>
+<style >
 
 .polaroidCART {
   position: relative;
-  width: 50%;
+  width: 30%;
 }
 .polaroidCART img {
   border: 10px solid #fff;
@@ -158,11 +161,14 @@ export default {
   bottom: 0px;
 }
 .flex{
-  padding: 5vh;
+  padding: 2vh;
 }
 .emptyCartText{
   width: 50%;
   padding: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .cart{
 
@@ -170,4 +176,19 @@ export default {
 p {
   font-size: 23px;
 }
+.btn-outline-light{
+  border-radius: 50px;
+  font-size: 25px;
+  margin-right:2%;
+}
+.addreduce {
+border-radius: 50px;
+background-color: #fff;
+font-size: 20px;
+font-weight: bold;
+}
+.remove {
+background-color: #F78888;
+}
+
 </style>

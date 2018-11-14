@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <Logo />
-    <Cart />
-  <Navbar />
+  <Logo />
+  <Cart />
+  <!-- <Navbar /> -->
   <Sidebar />
-      <router-view />
-      <Footer />
+  <router-view />
+  <Footer />
   </div>
 
 </template>
@@ -13,7 +13,7 @@
 <script>
 import Cart from './components/Cart.vue'
 import Articles from './components/Articles.vue'
-import Navbar from './components/Navbar.vue'
+// import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Logo from './components/Logo.vue'
 import Sidebar from './components/Sidebar.vue'
@@ -26,9 +26,9 @@ export default {
     Articles,
     Sidebar,
     Cart,
-    Navbar,
+    // Navbar,
     Footer,
-    Logo
+    Logo,
   }
 
 }

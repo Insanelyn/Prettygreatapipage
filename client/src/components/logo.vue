@@ -9,4 +9,10 @@ export default {
 </script>
 
 <style lang="css">
+.img-responsive {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
 </style>

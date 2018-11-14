@@ -32,7 +32,7 @@ export default {
   width:80%;
   margin-top: 4vh;
   opacity: 0.7;
-  margin-top: 8vh;
+  margin-top: 3vh;
   display: block;
   border-radius: 0px;
   height: 80%;
@@ -47,8 +47,7 @@ h3 {
   width: 90%;
   left:12%;
   top:-30%;
-  line-height: 1.67;
-  font-family: 'Six Caps', sans-serif;
+  line-height: 1.71;
 
 }
 h3 span {

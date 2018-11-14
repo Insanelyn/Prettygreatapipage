@@ -10,13 +10,16 @@
 
         <!-- <p><span class="font-weight-bold">Category</span>: {{ article.category }}</p> -->
         <!-- <p><span class="font-weight-bold">Color</span>: {{ article.color }}</p> -->
-
-        <p class="text-danger font-weight-bold">${{article.price}}</p>
+<div class="articlebody">
         <p>
           {{ article.long_description }}
         </p>
-        <button class="btn btn-outline-primary mb-5" @click="addToCart(article)">Buy</button>
+        <p class="text-danger font-weight-bold pull-left">${{article.price}}</p>
+
+        <button class="btn btn-addtocart btn-outline-primary mb-5 pull-right" @click="addToCart(article)">Buy</button>
       </div>
+    </div>
+
   </div>
         </div>
 </template>
@@ -56,7 +59,16 @@ img{
 }
 .article{
   top:9vh;
-  font-family: 'Six Caps', sans-serif;
 
+}
+.articlebody{
+  margin-top: 13%;
+}
+.btn-addtocart{
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  line-height: 25px;
 }
 </style>
