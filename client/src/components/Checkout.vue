@@ -24,7 +24,6 @@
                 <th scope="col">Price</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">SubTotat</th>
-                <th scope="col">Length</th>
                 <th scope="col">Actions</th>
 
               </tr>
@@ -35,7 +34,6 @@
                 <td>${{ item.price }}</td>
                 <td>{{ item.qty }}</td>
                 <td>${{ item.subtotal }}</td>
-                <td>${{ item.length }}</td>
 
                 <td>
                   <button class="btn btn-sm addreduce mr-1" @click="action('min',item)">-</button>

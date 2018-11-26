@@ -1,5 +1,7 @@
 import VueRouter from 'vue-router';
 import Articles from '@/components/Articles'
+import Card from '@/components/Card'
+
 import Article from '@/components/Article'
 import Category from '@/components/Category'
 import Checkout from '@/components/Checkout'
@@ -17,7 +19,7 @@ const routes = [
         props: true
     },
     {
-        path: '/category/:category',
+        path: '/categories/:category',
         name: 'category',
         component: Category,
         props: true
@@ -31,7 +33,12 @@ const routes = [
         path: '/Thankyou',
         name: 'thankyou',
         component: Thankyou,
-    }
+    },
+    {
+        path: '/reviews',
+        name: 'review',
+        component: Card,
+}
 
 
 ];

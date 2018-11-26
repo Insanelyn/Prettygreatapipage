@@ -14,6 +14,7 @@
     "stripe": "^5.10.0",
     "unsplash": "^4.2.0",
     "vue": "^2.5.13",
+    "vue-lodash": "^2.0.0",
     "vue-router": "^3.0.1",
     "vue-stripe-checkout": "^1.0.2",
     "vue-video-background": "^0.1.2",

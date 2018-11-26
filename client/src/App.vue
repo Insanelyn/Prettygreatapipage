@@ -3,7 +3,7 @@
   <Logo />
   <Cart />
   <!-- <Navbar /> -->
-  <Sidebar />
+  <!-- <Sidebar /> -->
   <router-view />
   <Footer />
   </div>
@@ -16,7 +16,7 @@ import Articles from './components/Articles.vue'
 // import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Logo from './components/Logo.vue'
-import Sidebar from './components/Sidebar.vue'
+// import Sidebar from './components/Sidebar.vue'
 
 
 
@@ -24,7 +24,7 @@ export default {
   name: 'app',
   components: {
     Articles,
-    Sidebar,
+    // Sidebar,
     Cart,
     // Navbar,
     Footer,
