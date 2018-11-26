@@ -11,11 +11,10 @@ router.get('/', function (req, res, next) {
             product_name : faker.name.firstName(),
             color : faker.commerce.color(),
             price : faker.commerce.price(),
+            stock : faker.commerce.price(),
             category: categories[Math.floor(Math.random() * categories.length)],
             long_description : faker.lorem.paragraph(),
             image: "https://picsum.photos/300/200"
-
-
         })
 
         article.save();

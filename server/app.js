@@ -11,6 +11,8 @@ const categories = require('./routes/categories');
 const stripe = require("stripe")('PRIVT_KEY');
 const database = require("./datalayer/mongo.js")
 const app = express();
+const reviews = require('./routes/reviews.js');
+
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +27,8 @@ app.use('/', index);
 app.use('/articles', articles);
 app.use('/categories', categories);
 app.use('/seeder', seeder);
+app.use('/reviews', reviews);
+
 
 app.post("/charge", (req, res, next) => {
   let amount = req.body.total*100;
@@ -42,11 +46,11 @@ app.post("/charge", (req, res, next) => {
       }))
     .then(charge => res.json(req.body.stripeToken));
 });
-app.use(function(req, res, next) {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function(req, res, next) {
+//   const err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 
 app.use(function(err, req, res, next) {
