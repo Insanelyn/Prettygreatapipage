@@ -29,13 +29,13 @@ export default {
 <style scoped>
 .categoryImg{
   object-fit: cover;
-  width:80%;
+  width:100%;
   margin-top: 4vh;
   opacity: 0.7;
   margin-top: 3vh;
   display: block;
   border-radius: 0px;
-  height: 80%;
+  height: 100%;
   content: attr(title);
 }
 
@@ -45,8 +45,8 @@ export default {
 h3 {
   position: relative;
   width: 90%;
-  left:12%;
-  top:-30%;
+  left:1%;
+  top:-22%;
   line-height: 1.71;
 
 }

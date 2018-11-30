@@ -1,10 +1,13 @@
 <template lang="html">
+<div class="row">
   <div class="cartempty" v-if="cart.length===0">
     <router-link tag="a" :to = "{name: 'checkout'}" class="nav-link"><img src="../assets/cartempty.png" class="cartimg"><span class="badge badge-light"></span></router-link>
   </div>
   <div class="cartfull" v-else>
     <router-link tag="a" :to = "{name: 'checkout'}" class="nav-link"><img src="../assets/cartfull.png" class="cartimg"><span class="badge badge-light"></span></router-link>
   </div>
+</div>
+
 </template>
 
 <script>
@@ -30,9 +33,19 @@ export default {
 }
 </script>
 
-<style lang="css">
-.cartimg{
-  width:9vh;
-
+<style scoped>
+.body{
+  display:flex;
 }
+.cartimg{
+    width:100%;
+    margin: auto;
+    display: block;
+    width:7vh;
+}
+.row{
+  flex-direction: row;
+  justify-content: center;
+}
+
 </style>

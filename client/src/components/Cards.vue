@@ -2,10 +2,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 mb-3" v-for="article in articles" :key="article._id">
+        <div class="cards">
         <Card :article="article" />
       </div>
+
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -32,14 +35,17 @@ export default {
 
   mixins: [mixins],
 
-    props: ['articles'],
-    components: {
-      Card,
-    }
+  props: ['articles'],
+  components: {
+    Card,
   }
+}
 
 </script>
 
 <style scoped>
+.cards {
 
+
+}
 </style>

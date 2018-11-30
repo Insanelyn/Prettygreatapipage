@@ -21,7 +21,6 @@ router.get('/:category', function (req, res, next) {
       Article.find({category: category.title}, function(err, articles) {
         if(err) return console.log(err);
         res.status(200).json(articles);
-
       }).sort({stock: stock})
 
     }  else if (req.query.price){
@@ -29,17 +28,17 @@ router.get('/:category', function (req, res, next) {
       Article.find({category: category.title}, function(err, articles) {
         if(err) return console.log(err);
         res.status(200).json(articles);
-
       }).sort({price: price})
+
     } else {
-        if (err) return console.log(err);
-        Article.find({category: category.title}, function(err, articles) {
-          if(err) return console.log(err);
-          res.status(200).json(articles);
-        })
-      }
-    })
-  }
+      if (err) return console.log(err);
+      Article.find({category: category.title}, function(err, articles) {
+        if(err) return console.log(err);
+        res.status(200).json(articles);
+      })
+    }
+  })
+}
 
 )
 

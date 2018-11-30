@@ -5,7 +5,9 @@
         <div v-if="cart.length==0">
           <div class="flex d-flex justify-content-center">
             <div class="polaroidCART ">
+              <figure>
               <img src="../assets/emptycart.jpg" alt="emptycart" class="emptycartimg">
+              </figure>
               <p class="text-center">Empty carts are for things,<br> not people you Hipster.</p>
             </div>
             <div class="emptyCartText">
@@ -138,13 +140,14 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
 
 .polaroidCART {
   position: relative;
   width: 30%;
 }
 .polaroidCART img {
+  width: 100%;
   border: 10px solid #fff;
   border-bottom: 85px solid #fff;
   -webkit-box-shadow: 3px 3px 3px #777;
@@ -167,6 +170,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.emptycart{
+
 }
 .cart{
 

@@ -5,16 +5,16 @@ const Article = require('../../models/Article');
 const Category = require('../../models/Category');
 
 router.get('/', function (req, res, next) {
-    const categories = ["Accesories","Design", "Kitchen", "Electronics", "Clothing", "Eidibles"];
-    for (let i = 0; i < 80; i++) {
+    const categories = ["Accesories", "Gadgets", "Kitchen"];
+    for (let i = 0; i < 32; i++) {
         let article = new Article({
             product_name : faker.name.firstName(),
             color : faker.commerce.color(),
-            price : faker.commerce.price(),
-            stock : faker.commerce.price(),
-            category: categories[Math.floor(Math.random() * categories.length)],
+            price : faker.random.number(115),
+            stock : faker.random.number(15),
+            category: categories[Math.floor(Math.random(6) * categories.length)],
             long_description : faker.lorem.paragraph(),
-            image: "https://picsum.photos/300/200"
+            image: faker.image.technics()
         })
 
         article.save();
