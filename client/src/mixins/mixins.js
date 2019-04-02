@@ -18,7 +18,7 @@ export default {
                 let item = cart.find(item => {
                     return item.id === article._id;
                 });
-                if (item) { // check if is not new item
+                if (item) { 
                     item.qty++;
                     item.subtotal = item.price*item.qty
                     this.$store.commit('setQuantity', item);
